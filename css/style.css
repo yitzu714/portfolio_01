@@ -89,6 +89,17 @@ html body {
   width: 100%;
   height: 100%;
 }
+html body::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+html body::-webkit-scrollbar-track {
+  background: transparent;
+}
+html body::-webkit-scrollbar-thumb {
+  background: #97ebdb;
+  border-radius: 10px;
+}
 html body header {
   width: 100%;
   min-width: 1280px;
@@ -96,8 +107,10 @@ html body header {
   position: fixed;
   top: 0px;
   left: 0px;
-  background: #97ebdb;
   z-index: 1;
+}
+html body header.scroll .leftNav .leftNavBtn span {
+  background: #00a29a;
 }
 html body header.rwd {
   min-width: 0;
@@ -179,27 +192,28 @@ html body header .bigList {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 60px;
+  margin-right: 16px;
 }
 html body header .bigList li {
-  color: #ffffff;
+  color: #595757;
   font-size: 27px;
-  margin: 0px 15px;
+  margin: 0px 8px;
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-bottom: solid 3px transparent;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  font-weight: bold;
 }
 html body header .bigList li:hover, html body header .bigList li:active, html body header .bigList li.active {
-  color: #027878;
+  color: #00a29a;
 }
 html body main {
   width: 100%;
+  min-width: 1280px;
   height: auto;
-  padding: 20px 0;
-  margin-top: 60px;
+  margin-top: 152px;
 }
 html body main.rwd article {
   width: auto;
@@ -209,61 +223,157 @@ html body main.rwd article .cv .img {
   height: 0;
   padding-top: 131vw;
 }
+html body main .mainBg {
+  width: 100%;
+  height: 365px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+html body main .mainBg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 1920px;
+  height: 365px;
+  background: url("../images/作品集/插圖/star.jpg") no-repeat;
+  background-size: cover;
+  background-position-y: -365px;
+}
+html body main .sticker {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: url("../images/sticker.jpg") no-repeat;
+  background-size: 130%;
+  background-position: -32px -108px;
+  margin: 0 auto;
+}
 html body main article {
   width: 1280px;
   height: auto;
   margin: 0 auto;
-  padding: 30px 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-shadow: 0 5px 10px -3px #00000066;
-          box-shadow: 0 5px 10px -3px #00000066;
+}
+html body main article .title1 {
+  font-size: 60px;
+  color: #000000;
+  text-align: center;
+  padding: 22px 0;
+}
+html body main article .title2 {
+  font-size: 72px;
+  font-weight: bold;
+  color: #00a29a;
+  text-align: center;
+}
+html body main article .secTitle {
+  font-size: 21px;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+}
+html body main article .secTitle p {
+  line-height: 26px;
 }
 html body main article section {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 html body main article section:last-child {
   margin: 0;
 }
-html body main article .title {
-  font-size: 42px;
-  font-weight: bold;
-  padding: 20px 10px;
+html body main article section.introBox {
+  width: 100%;
+  height: auto;
+}
+html body main article section.introBox .contactBox {
+  width: 500px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 32px auto 0;
+}
+html body main article section.introBox .contactBox li {
+  width: 50%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #000000;
+  font-size: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
 }
-html body main article .secTitle {
-  font-size: 24px;
+html body main article section.introBox .contactBox li:nth-last-of-type(1), html body main article section.introBox .contactBox li:nth-last-of-type(2) {
+  margin: 0;
+}
+html body main article section.introBox .contactBox li i {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+html body main article section.introBox .contactBox li i.location_ic {
+  background: url("../images/icon/01.png") no-repeat center;
+  background-size: 70%;
+}
+html body main article section.introBox .contactBox li i.birthday_ic {
+  background: url("../images/icon/04.png") no-repeat;
+  background-size: 100%;
+}
+html body main article section.introBox .contactBox li i.phone_ic {
+  background: url("../images/icon/03.png") no-repeat;
+  background-size: 100%;
+}
+html body main article section.introBox .contactBox li i.mail_ic {
+  background: url("../images/icon/02.png") no-repeat;
+  background-size: 100%;
+  background-position-y: 10px;
+}
+html body main article section.cv {
+  width: 100%;
+  height: auto;
+}
+html body main article section.cv .cvImg {
+  width: 1280px;
+  height: 600px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto;
+  background: url("../images/cv.jpg") no-repeat;
+  background-size: 100%;
+}
+html body main article section.autobiography {
+  width: 100%;
+  height: auto;
+}
+html body main article section.autobiography .textBox {
+  padding: 40px 40px 0;
+}
+html body main article section.autobiography .textBox p {
+  font-size: 18px;
   font-weight: bold;
-  padding: 10px;
-  color: #242424;
-}
-html body main article hr {
-  width: 100%;
-  height: 4px;
-  border-style: dashed;
-  border-color: #b1b1b1;
-  border-width: 0 0 1px;
-}
-html body main article .introBox {
-  width: 100%;
-  height: auto;
-}
-html body main article .introBox .pBox {
-  width: 100%;
-  height: auto;
-  padding: 0 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-html body main article .introBox .pBox p {
-  color: #4d4d4d;
+  color: #000000;
   line-height: 24px;
+  margin-bottom: 30px;
 }
-html body main article .artWork {
+html body main article section.artWork {
   width: 100%;
   height: auto;
 }
-html body main article .artWork .videoBox {
+html body main article section.artWork .title2 {
+  margin: 60px 0;
+}
+html body main article section.artWork .videoBox {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -275,52 +385,70 @@ html body main article .artWork .videoBox {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
-html body main article .artWork .videoBox iframe {
-  width: 48%;
-  height: 336px;
-  margin-bottom: 20px;
+html body main article section.artWork .videoBox iframe {
+  width: 30%;
+  height: 214px;
+  margin-bottom: 44px;
 }
-html body main article .artWork .videoBox iframe:nth-last-of-type(1), html body main article .artWork .videoBox iframe:nth-last-of-type(2) {
+html body main article section.artWork .videoBox iframe:nth-last-of-type(1), html body main article section.artWork .videoBox iframe:nth-last-of-type(2), html body main article section.artWork .videoBox iframe:nth-last-of-type(3) {
   margin: 0;
 }
-html body main article .cv {
-  width: 100%;
-  height: auto;
-}
-html body main article .cv img {
+html body main .goTop {
   display: block;
-  width: 800px;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: 0 auto;
+  width: 65px;
+  height: 65px;
+  background: #c9c9ca;
+  border-radius: 50%;
+  margin: 24px auto;
+  position: relative;
 }
-html body main article .contact {
+html body main .goTop::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 20px 14px;
+  border-color: #ffffff transparent;
+}
+html body main .goTop:hover::before, html body main .goTop:active::before, html body main .goTop.active::before {
+  -webkit-animation: arrowMove 0.8s ease 0s infinite;
+          animation: arrowMove 0.8s ease 0s infinite;
+}
+@-webkit-keyframes arrowMove {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -75%);
+            transform: translate(-50%, -75%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+@keyframes arrowMove {
+  0% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -75%);
+            transform: translate(-50%, -75%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+html body footer {
   width: 100%;
-  height: auto;
-}
-html body main article .contact table {
-  width: 60%;
-  height: auto;
-  margin: 0 auto;
-}
-html body main article .contact table tr {
-  width: 100%;
-  height: auto;
-}
-html body main article .contact table tr th {
-  text-align: center;
-  vertical-align: middle;
-  width: 100%;
-  height: 30px;
-  color: #505050;
-  font-weight: bold;
-}
-html body main article .contact table tr td {
-  text-align: center;
-  vertical-align: middle;
-  width: 100%;
-  height: 40px;
-  color: #1f1f1f;
-  letter-spacing: 2px;
+  height: 60px;
+  background: #00a29a;
 }

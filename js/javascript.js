@@ -15,7 +15,7 @@ $(function(){
 
     $('.homeBtn').click(function() { 
         $('html,body').animate({
-                scrollTop: $('.introBox').offset().top - 60
+                scrollTop: $('.introBox').offset().top - 0
         }, 1000)
     });
     $('.artWorkBtn').click(function() {
@@ -28,11 +28,20 @@ $(function(){
                 scrollTop: $('.cv').offset().top - 60
         }, 1000)
     });
-    $('.contactBtn').click(function() {
+    $('.autobiographyBtn').click(function() {
         $('html,body').animate({
-                scrollTop: $('.contact').offset().top - 60
+                scrollTop: $('.autobiography').offset().top - 60
         }, 1000)
     });
+
+    $(window).scroll(function () {
+        var scrollVal = $(this).scrollTop();
+        if(scrollVal > 300){
+                $("header").addClass("scroll");
+        } else{
+                $("header").removeClass("scroll");
+        };
+    })
 })
 
 //判斷手機裝置
@@ -56,4 +65,14 @@ $(function(){
         lastRow : 'nojustify',
         margins : 3
     });
+})
+
+//回到頂端
+$(function(){
+	$(".goTop").click(function(){
+        	var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
+        	$body.animate({
+            		scrollTop:0
+        	},1000);
+    	})
 })

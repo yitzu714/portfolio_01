@@ -7,6 +7,18 @@ html {
         width: 100%;
         height: 100%;
 
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #97ebdb;
+            border-radius: 10px;
+        }
+
         header {
             width: 100%;
             min-width: 1280px;
@@ -14,8 +26,20 @@ html {
             position: fixed;
             top: 0px;
             left: 0px;
-            background: #97ebdb;
             z-index: 1;
+
+            &.scroll {
+                
+                .leftNav {
+
+                    .leftNavBtn {
+
+                        span {
+                            background: #00a29a;
+                        }
+                    }
+                }
+            }
 
             &.rwd {
                 min-width: 0;
@@ -90,19 +114,20 @@ html {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                margin-right: 60px;
+                margin-right: 16px;
 
                 li {
-                    color: #ffffff;
+                    color: #595757;
                     font-size: 27px;
-                    margin: 0px 15px;
+                    margin: 0px 8px;
                     cursor: pointer;
                     box-sizing: border-box;
                     border-bottom: solid 3px transparent;
                     transition: 0.3s all;
+                    font-weight: bold;
 
                     &:hover,&:active,&.active {
-                        color: #027878;
+                        color: #00a29a;
                     }
                 }
             }
@@ -110,9 +135,9 @@ html {
 
         main {
             width: 100%;
+            min-width: 1280px;
             height: auto;
-            padding: 20px 0;
-            margin-top: 60px;
+            margin-top: 152px;
 
             &.rwd {
 
@@ -130,138 +155,244 @@ html {
                 }
             }
 
+            .mainBg {
+                width: 100%;
+                height: 365px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 1920px;
+                    height: 365px;
+                    background: url('../images/作品集/插圖/star.jpg') no-repeat;
+                    background-size: cover;
+                    background-position-y: -365px;
+                }
+            }
+            .sticker {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                background: url('../images/sticker.jpg') no-repeat;
+                background-size: 130%;
+                background-position: -32px -108px;
+                margin: 0 auto;
+            }
+
             article {
                 width: 1280px;
                 height: auto;
                 margin: 0 auto;
-                padding: 30px 15px;
-                box-sizing: border-box;
-                box-shadow: 0 5px 10px -3px #00000066;
+
+                //開頭大標--name
+                .title1 {
+                    font-size: 60px;
+                    color: #000000;
+                    text-align: center;
+                    padding: 22px 0;
+                }
+                //開頭大標--sectionName
+                .title2 {
+                    font-size: 72px;
+                    font-weight: bold;
+                    color: #00a29a;
+                    text-align: center;
+                }
+                //小標 h2
+                .secTitle {
+                    font-size: 21px;
+                    color: #000000;
+                    font-weight: bold;
+                    text-align: center;
+
+                    p {
+                        line-height: 26px;
+                    }
+                }
 
                 section {
-                    margin-bottom: 30px;
+                    margin-bottom: 60px;
 
                     &:last-child {
                         margin: 0;
                     }
-                }
 
-                //開頭大標 h1
-                .title {
-                    font-size: 42px;
-                    font-weight: bold;
-                    padding: 20px 10px;
-                    color: #000000;
-                }
-                //小標 h2
-                .secTitle {
-                    font-size: 24px;
-                    font-weight: bold;
-                    padding: 10px;
-                    color: #242424
-                }
-
-                //分段線
-                hr {
-                    width: 100%;
-                    height: 4px;
-                    border-style: dashed;
-                    border-color: #b1b1b1;
-                    border-width: 0 0 1px;
-                }
-
-                //自我介紹
-                .introBox {
-                    width: 100%;
-                    height: auto;
-
-                    .pBox {
+                    //自我介紹
+                    &.introBox {
                         width: 100%;
                         height: auto;
-                        padding: 0 10px;
-                        box-sizing: border-box;
+    
+                        .contactBox {
+                            width: 500px;
+                            height: auto;
+                            display: flex;
+                            flex-wrap: wrap;
+                            margin: 32px auto 0;
+                            
+                            li {
+                                width: 50%;
+                                height: auto;
+                                display: flex;
+                                color: #000000;
+                                font-size: 16px;
+                                align-items: center;
+                                margin-bottom: 10px;
 
-                        p {
-                            color: #4d4d4d;
-                            line-height: 24px;
-                        }
-                    }
-                }
+                                &:nth-last-of-type(1),
+                                &:nth-last-of-type(2) {
+                                    margin: 0;
+                                }
 
-                //作品集
-                .artWork {
-                    width: 100%;
-                    height: auto;
+                                i {
+                                    display: block;
+                                    width: 40px;
+                                    height: 40px;
+                                    margin-right: 20px;
 
-                    .videoBox {
-                        width: 100%;
-                        height: auto;
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-evenly;
-
-                        iframe {
-                            width: 48%;
-                            height: 336px;
-                            margin-bottom: 20px;
-
-                            &:nth-last-of-type(1),
-                            &:nth-last-of-type(2) {
-                                margin: 0;
+                                    &.location_ic {
+                                        background: url('../images/icon/01.png') no-repeat center;
+                                        background-size: 70%;
+                                    }
+                                    &.birthday_ic {
+                                        background: url('../images/icon/04.png') no-repeat;
+                                        background-size: 100%;
+                                    }
+                                    &.phone_ic {
+                                        background: url('../images/icon/03.png') no-repeat;
+                                        background-size: 100%;
+                                    }
+                                    &.mail_ic {
+                                        background: url('../images/icon/02.png') no-repeat;
+                                        background-size: 100%;
+                                        background-position-y: 10px;
+                                    }
+                                }
                             }
                         }
                     }
-                }
 
-                //履歷表
-                .cv {
-                    width: 100%;
-                    height: auto;
-                    
-                    img {
-                        display: block;
-                        width: 800px;
+                    //履歷表
+                    &.cv {
+                        width: 100%;
                         height: auto;
-                        object-fit: contain;
-                        margin: 0 auto;
+                        
+                        .cvImg {
+                            width: 1280px;
+                            height: 600px;
+                            object-fit: contain;
+                            margin: 0 auto;
+                            background: url('../images/cv.jpg') no-repeat;
+                            background-size: 100%;
+                        }
                     }
-                }
 
-                //聯繫我
-                .contact {
-                    width: 100%;
-                    height: auto;
-
-                    table {
-                        width: 60%;
+                    //自傳
+                    &.autobiography {
+                        width: 100%;
                         height: auto;
-                        margin: 0 auto;
 
-                        tr {
+                        .textBox {
+                            padding: 40px 40px 0;
+
+                            p {
+                                font-size: 18px;
+                                font-weight: bold;
+                                color: #000000;
+                                line-height: 24px;
+                                margin-bottom: 30px;
+                            }
+                        }
+                    }
+
+                    //作品集
+                    &.artWork {
+                        width: 100%;
+                        height: auto;
+
+                        .title2 {
+                            margin: 60px 0;
+                        }
+
+                        .videoBox {
                             width: 100%;
                             height: auto;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-evenly;
 
-                            th {
-                                text-align: center;
-                                vertical-align: middle;
-                                width: 100%;
-                                height: 30px;
-                                color: #505050;
-                                font-weight: bold;
-                            }
+                            iframe {
+                                width: 30%;
+                                height: 214px;
+                                margin-bottom: 44px;
 
-                            td {
-                                text-align: center;
-                                vertical-align: middle;
-                                width: 100%;
-                                height: 40px;
-                                color: #1f1f1f;
-                                letter-spacing: 2px;
+                                &:nth-last-of-type(1),
+                                &:nth-last-of-type(2),
+                                &:nth-last-of-type(3) {
+                                    margin: 0;
+                                }
                             }
                         }
                     }
                 }
             }
+
+            .goTop {
+                display: block;
+                width: 65px;
+                height: 65px;
+                background: #c9c9ca;
+                border-radius: 50%;
+                margin: 24px auto;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 14px 20px 14px;
+                    border-color: #ffffff transparent;
+                }
+
+                &:hover,&:active,&.active {
+                        
+                    &::before {
+                        animation: arrowMove 0.8s ease 0s infinite;
+                    }
+                }
+
+                @keyframes arrowMove {
+                    0% {
+                        transform: translate(-50%,-50%);
+                    }
+
+                    50% {
+                        transform: translate(-50%,-75%);
+                    }
+
+                    100% {
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            height: 60px;
+            background: #00a29a;
         }
     }
 }
