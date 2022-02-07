@@ -9,11 +9,17 @@ html {
 
         header {
             width: 100%;
+            min-width: 1280px;
             height: 60px;
-            position: sticky;
+            position: fixed;
             top: 0px;
             left: 0px;
             background: #97ebdb;
+            z-index: 1;
+
+            &.rwd {
+                min-width: 0;
+            }
 
             .leftNav {
                 position: fixed;
@@ -97,6 +103,162 @@ html {
 
                     &:hover,&:active,&.active {
                         color: #027878;
+                    }
+                }
+            }
+        }
+
+        main {
+            width: 100%;
+            height: auto;
+            padding: 20px 0;
+            margin-top: 60px;
+
+            &.rwd {
+
+                article {
+                    width: auto;
+
+                    .cv {
+                        
+                        .img {
+                            width: 100%;
+                            height: 0;
+                            padding-top: 131vw;
+                        }
+                    }
+                }
+            }
+
+            article {
+                width: 1280px;
+                height: auto;
+                margin: 0 auto;
+                padding: 30px 15px;
+                box-sizing: border-box;
+                box-shadow: 0 5px 10px -3px #00000066;
+
+                section {
+                    margin-bottom: 30px;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+
+                //開頭大標 h1
+                .title {
+                    font-size: 42px;
+                    font-weight: bold;
+                    padding: 20px 10px;
+                    color: #000000;
+                }
+                //小標 h2
+                .secTitle {
+                    font-size: 24px;
+                    font-weight: bold;
+                    padding: 10px;
+                    color: #242424
+                }
+
+                //分段線
+                hr {
+                    width: 100%;
+                    height: 4px;
+                    border-style: dashed;
+                    border-color: #b1b1b1;
+                    border-width: 0 0 1px;
+                }
+
+                //自我介紹
+                .introBox {
+                    width: 100%;
+                    height: auto;
+
+                    .pBox {
+                        width: 100%;
+                        height: auto;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+
+                        p {
+                            color: #4d4d4d;
+                            line-height: 24px;
+                        }
+                    }
+                }
+
+                //作品集
+                .artWork {
+                    width: 100%;
+                    height: auto;
+
+                    .videoBox {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+
+                        iframe {
+                            width: 48%;
+                            height: 336px;
+                            margin-bottom: 20px;
+
+                            &:nth-last-of-type(1),
+                            &:nth-last-of-type(2) {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                //履歷表
+                .cv {
+                    width: 100%;
+                    height: auto;
+                    
+                    img {
+                        display: block;
+                        width: 800px;
+                        height: auto;
+                        object-fit: contain;
+                        margin: 0 auto;
+                    }
+                }
+
+                //聯繫我
+                .contact {
+                    width: 100%;
+                    height: auto;
+
+                    table {
+                        width: 60%;
+                        height: auto;
+                        margin: 0 auto;
+
+                        tr {
+                            width: 100%;
+                            height: auto;
+
+                            th {
+                                text-align: center;
+                                vertical-align: middle;
+                                width: 100%;
+                                height: 30px;
+                                color: #505050;
+                                font-weight: bold;
+                            }
+
+                            td {
+                                text-align: center;
+                                vertical-align: middle;
+                                width: 100%;
+                                height: 40px;
+                                color: #1f1f1f;
+                                letter-spacing: 2px;
+                            }
+                        }
                     }
                 }
             }
