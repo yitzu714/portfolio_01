@@ -385,13 +385,61 @@ html body main article section.artWork .videoBox {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
-html body main article section.artWork .videoBox iframe {
+html body main article section.artWork .videoBox video {
   width: 30%;
   height: 214px;
   margin-bottom: 44px;
 }
-html body main article section.artWork .videoBox iframe:nth-last-of-type(1), html body main article section.artWork .videoBox iframe:nth-last-of-type(2), html body main article section.artWork .videoBox iframe:nth-last-of-type(3) {
+html body main article section.artWork .videoBox video:nth-last-of-type(1), html body main article section.artWork .videoBox video:nth-last-of-type(2) {
   margin: 0;
+}
+html body main article section.artWork .videoBox s {
+  width: 30%;
+}
+html body main article section.artWork .comicBox {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+html body main article section.artWork .comicBox a {
+  width: 30%;
+  margin-bottom: 44px;
+}
+html body main article section.artWork .comicBox a:nth-last-of-type(1), html body main article section.artWork .comicBox a:nth-last-of-type(2), html body main article section.artWork .comicBox a:nth-last-of-type(3) {
+  margin: 0;
+}
+html body main article section.artWork .comicBox a img {
+  width: 100%;
+}
+html body main article section.artWork .bannerBox {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+html body main article section.artWork .bannerBox a {
+  width: 100%;
+  height: auto;
+  margin-bottom: 44px;
+}
+html body main article section.artWork .bannerBox a:last-child {
+  margin: 0;
+}
+html body main article section.artWork .bannerBox a img {
+  width: 100%;
 }
 html body main .goTop {
   display: block;
