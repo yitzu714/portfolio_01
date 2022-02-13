@@ -25,15 +25,6 @@ $(function(){
                 scrollTop: $('.autobiography').offset().top - 60
         }, 1000)
     });
-
-    $(window).scroll(function () {
-        var scrollVal = $(this).scrollTop();
-        if(scrollVal > 300){
-                $("header").addClass("scroll");
-        } else{
-                $("header").removeClass("scroll");
-        };
-    })
 })
 
 //插圖區
@@ -74,6 +65,39 @@ $(function(){
         },1000);
     })
 })
+
+//滑動到特定class時觸發
+$(document).scroll(function(e) {
+    var detectrange = 70;
+    var scrolltop = $(window).scrollTop() + detectrange;
+    $('.introBox').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.homeBtn'+el.id).addClass('active');
+            $('.homeBtn'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    $('.cv').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.cvBtn'+el.id).addClass('active');
+            $('.cvBtn'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    $('.autobiography').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.autobiographyBtn'+el.id).addClass('active');
+            $('.autobiographyBtn'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    $('.artWork').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.artWorkBtn'+el.id).addClass('active');
+            $('.artWorkBtn'+el.id).siblings().removeClass('active');
+        }
+    });
+});
 
 //forMobile
 //點擊閱讀完整內容
