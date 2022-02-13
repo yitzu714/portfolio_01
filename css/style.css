@@ -247,7 +247,7 @@ html body main.rwd article .title2 {
   margin: 10vw 0;
 }
 html body main.rwd article .secTitle {
-  font-size: 4vw;
+  font-size: 4vw !important;
 }
 html body main.rwd article .secTitle p {
   line-height: 6vw;
