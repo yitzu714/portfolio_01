@@ -528,7 +528,7 @@ html body main article section.cv .cvImg {
   -o-object-fit: contain;
      object-fit: contain;
   margin: 0 auto;
-  background: url("../images/cv.jpg") no-repeat;
+  background: url("../images/cv.jpeg") no-repeat;
   background-size: 100%;
 }
 html body main article section.autobiography {
