@@ -274,6 +274,17 @@ html {
                                     .innerBtn {
                                         color: #1e449a;
                                         font-weight: bold;
+                                        position: relative;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 3px;
+                                            background: #1e499a;
+                                            left: 0;
+                                            bottom: -3px;
+                                        }
                                     }
                                 }
 

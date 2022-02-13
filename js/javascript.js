@@ -135,6 +135,12 @@ $(function(){
                 scrollTop: $('.justified-gallery').offset().top - 500
         }, 1000)
     });
+
+    $('.innerWrap.close').click(function() {
+        $('html,body').animate({
+                scrollTop: $('.autobiography').offset().top - 120
+        }, 0)
+    });
 })
 
 //滑動到特定class時觸發

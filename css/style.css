@@ -323,6 +323,16 @@ html body main.rwd article section.autobiography .textBox .innerWrap.close span:
 html body main.rwd article section.autobiography .textBox .innerWrap .innerBtn {
   color: #1e449a;
   font-weight: bold;
+  position: relative;
+}
+html body main.rwd article section.autobiography .textBox .innerWrap .innerBtn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #1e499a;
+  left: 0;
+  bottom: -3px;
 }
 html body main.rwd article section.autobiography .textBox .innerBox {
   display: none;
