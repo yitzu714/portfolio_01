@@ -1,11 +1,3 @@
-//左選單效果
-$(function(){
-    $('.leftNavBtn').click(function(){
-        $('.leftNav').toggleClass('display');
-        $(this).toggleClass('active');
-    })
-})
-
 //header選單
 $(function(){
     $('header .bigList li').click(function(){
@@ -44,6 +36,15 @@ $(function(){
     })
 })
 
+//插圖區
+$(function(){
+    $('.justified-gallery').justifiedGallery({
+        rowHeight : 200,
+        lastRow : 'nojustify',
+        margins : 3
+    });
+})
+
 //判斷手機裝置
 function isMobile() {
 
@@ -54,25 +55,36 @@ function isMobile() {
 }
 $(function(){
     if(isMobile()){
-        $('header,main').addClass('rwd');
-    }
-})
+        $('header,main,footer').addClass('rwd');
 
-//插圖區
-$(function(){
-    $('.justified-gallery').justifiedGallery({
-        rowHeight : 200,
-        lastRow : 'nojustify',
-        margins : 3
-    });
+        $('.justified-gallery').justifiedGallery({
+            rowHeight : 600,
+            lastRow : 'nojustify',
+            margins : 30
+        });
+    }
 })
 
 //回到頂端
 $(function(){
 	$(".goTop").click(function(){
-        	var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
-        	$body.animate({
-            		scrollTop:0
-        	},1000);
-    	})
+        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
+        $body.animate({
+                scrollTop:0
+        },1000);
+    })
+})
+
+//forMobile
+//點擊閱讀完整內容
+$(function(){
+    $(".autobiography .innerBtn").click(function(){
+        $(".autobiography .innerWrap").removeClass("display");
+        $(".autobiography .innerBox").addClass("display");
+    })
+
+    $(".autobiography .innerWrap.close").click(function(){
+        $(".autobiography .innerBox").removeClass("display");
+        $(".autobiography .innerWrap.open").addClass("display");
+    })
 })
