@@ -48,6 +48,8 @@ $(function(){
             lastRow : 'nojustify',
             margins : 30
         });
+
+        $(".secTitle").css("font-size","4vw");
     }
 })
 
