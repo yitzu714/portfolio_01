@@ -1,13 +1,8 @@
 //header選單
 $(function(){
-    $('header .bigList li').click(function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-    })
-
     $('.homeBtn').click(function() { 
         $('html,body').animate({
-                scrollTop: $('.introBox').offset().top - 0
+                scrollTop: $('main').offset().top - 500
         }, 1000)
     });
     $('.artWorkBtn').click(function() {
@@ -112,3 +107,80 @@ $(function(){
         $(".autobiography .innerWrap.open").addClass("display");
     })
 })
+
+//footer點擊滑動
+$(function(){
+    $('.footer_home').click(function() { 
+        $('html,body').animate({
+                scrollTop: $('main').offset().top - 500
+        }, 1000)
+    });
+    $('.footer_cv').click(function() {
+        $('html,body').animate({
+                scrollTop: $('.cv').offset().top - 120
+        }, 1000)
+    });
+    $('.footer_auto').click(function() {
+        $('html,body').animate({
+                scrollTop: $('.autobiography').offset().top - 120
+        }, 1000)
+    });
+    $('.footer_video').click(function() {
+        $('html,body').animate({
+                scrollTop: $('.artWork').offset().top - 120
+        }, 1000)
+    });
+    $('.footer_img').click(function() {
+        $('html,body').animate({
+                scrollTop: $('.justified-gallery').offset().top - 500
+        }, 1000)
+    });
+})
+
+//滑動到特定class時觸發
+$(document).scroll(function(e) {
+    var detectrange = 140;
+    var scrolltop = $(window).scrollTop() + detectrange;
+    $('.introBox').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.footer_home'+el.id).addClass('active');
+            $('.footer_home'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    $('.cv').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.footer_cv'+el.id).addClass('active');
+            $('.footer_cv'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    $('.autobiography').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.footer_auto'+el.id).addClass('active');
+            $('.footer_auto'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    $('.artWork').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.footer_video'+el.id).addClass('active');
+            $('.footer_video'+el.id).siblings().removeClass('active');
+        }
+    });
+    $('.justified-gallery').each(function(i, el){
+        if (scrolltop > $(el).offset().top) {
+            $('.footer_img'+el.id).addClass('active');
+            $('.footer_img'+el.id).siblings().removeClass('active');
+        }
+    });
+
+    var detectrange2 = 650;
+    var scrolltop2 = $(window).scrollTop() + detectrange2;
+    $('.justified-gallery').each(function(i, el){
+        if (scrolltop2 > $(el).offset().top) {
+            $('.footer_img'+el.id).addClass('active');
+            $('.footer_img'+el.id).siblings().removeClass('active');
+        }
+    });
+});
