@@ -7,17 +7,12 @@ $(function(){
     });
     $('.artWorkBtn').click(function() {
         $('html,body').animate({
-                scrollTop: $('.artWork').offset().top - 60
+                scrollTop: $('.artWork').offset().top - 30
         }, 1000)
     });
     $('.cvBtn').click(function() {
         $('html,body').animate({
-                scrollTop: $('.cv').offset().top - 60
-        }, 1000)
-    });
-    $('.autobiographyBtn').click(function() {
-        $('html,body').animate({
-                scrollTop: $('.autobiography').offset().top - 60
+                scrollTop: $('.cv').offset().top - 30
         }, 1000)
     });
 })
