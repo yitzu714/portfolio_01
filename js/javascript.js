@@ -110,29 +110,18 @@ $(function(){
     });
     $('.footer_cv').click(function() {
         $('html,body').animate({
-                scrollTop: $('.cv').offset().top - 120
-        }, 1000)
-    });
-    $('.footer_auto').click(function() {
-        $('html,body').animate({
-                scrollTop: $('.autobiography').offset().top - 120
+                scrollTop: $('.cv').offset().top - 10
         }, 1000)
     });
     $('.footer_video').click(function() {
         $('html,body').animate({
-                scrollTop: $('.artWork').offset().top - 120
+                scrollTop: $('.artWork').offset().top - 10
         }, 1000)
     });
     $('.footer_img').click(function() {
         $('html,body').animate({
-                scrollTop: $('.justified-gallery').offset().top - 500
+                scrollTop: $('.justified-gallery').offset().top - 80
         }, 1000)
-    });
-
-    $('.innerWrap.close').click(function() {
-        $('html,body').animate({
-                scrollTop: $('.autobiography').offset().top - 120
-        }, 0)
     });
 })
 
