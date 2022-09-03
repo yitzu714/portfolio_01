@@ -1,0 +1,241 @@
+@media only screen and (max-width: 420px) {
+    html {
+
+        body {
+
+            header {
+                display: none;
+            }
+        
+            main {
+                min-width: 0;
+                margin-top: 12vh;
+        
+                .mainBg {
+                    min-width: 0;
+                    height: 20vh;
+        
+                    &::before {
+                        width: 100%;
+                        height: 100%;
+                        background-size: 300%;
+                        background-position: -130vw -60vw;
+                    }
+                }
+        
+                .stickerBox {
+                    width: 100%;
+        
+                    .sticker {
+                        width: 33vw;
+                        height: 33vw;
+                        background-size: 140%;
+                        background-position: -5vw -13vw;
+                        margin-left: 10vw;
+                    }
+                }
+        
+                article {
+                    width: 100%;
+        
+                    h1 {
+                        font-size: 9vw;
+                        padding: 2vw 0 5vw 13vw;
+                    }
+        
+                    section {
+                        margin-bottom: 5vw;
+        
+                        &.introBox {
+                            position: relative;
+        
+                            .infoBox {
+        
+                                .contactBox {
+                                    position: absolute;
+                                    top: -31vw;
+                                    right: 2vw;
+                                    grid-template-columns: repeat(1,1fr);
+                                    gap: 2vw 0;
+        
+                                    li {
+                                        font-size: 4vw;
+                                        font-weight: bold;
+                                    }
+                                }
+        
+                                .secTitle {
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        &.cv {
+                            padding: 0 3vw;
+
+                            .textBox {
+
+                                p {
+                                    font-size: 3.7vw;
+                                }
+                            }
+
+                            .skillBox {
+                                margin-bottom: 15vw;
+
+                                div {
+                                    width: 46%;
+
+                                    .title {
+                                        padding-bottom: 3vw;
+                                        margin-bottom: 3vw;
+
+                                        h2 {
+                                            font-size: 8vw;
+                                        }
+                                    }
+
+                                    ul {
+                                        padding-left: 5vw;
+
+                                        li {
+                                            font-size: 3.4vw;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .workBox {
+                                
+                                .title {
+                                    padding: 0 1.5vw 3vw;
+                                    margin-bottom: 5vw;
+                                }
+
+                                .content {
+                                    display: block;
+                                    padding: 0 1.5vw 5vw;
+                                    margin-bottom: 5vw;
+
+                                    .left {
+                                        width: 100%;
+                                        margin-bottom: 24px;
+
+                                        .smallTitle {
+                                            font-size: 5vw;
+                                        }
+
+                                        .text {
+                                            font-size: 4.2vw;
+                                        }
+                                    }
+
+                                    .right {
+
+                                        p {
+                                            padding: 0;
+                                            font-size: 3.7vw;
+                                        }
+
+                                        ul {
+                                            padding-left: 5vw;
+
+                                            &.pro {
+                                                padding-top: 0;
+                                            }
+
+                                            li {
+                                                font-size: 3.7vw;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .imgBox {
+                                    display: block;
+                                    padding: 0 1.5vw 5vw;
+                                    margin-bottom: 5vw;
+
+                                    .left {
+                                        width: 100%;
+                                    }
+
+                                    .right {
+                                        padding: 5vw 0 0 0;
+
+                                        p {
+                                            font-size: 4vw;
+                                        }
+                                    }
+                                }
+
+                                .videoBox {
+                                    padding: 0 1.5vw 5vw;
+                                    margin-bottom: 5vw;
+
+                                    &>div {
+                                        display: block;
+
+                                        iframe {
+                                            width: 100%;
+                                            height: 52vw;
+                                            margin: 0;
+                                        }
+
+                                        video {
+                                            width: 100%;
+                                            margin: 0;
+                                        }
+
+                                        .infoBox {
+
+                                            .videoTitle {
+                                                margin: 5vw 0 3vw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.artWork {
+
+                            .title {
+                                margin: 7vw;
+                            }
+
+                            .videoBox {
+
+                                div:not(.infoBox) {
+
+                                    &:nth-of-type(1),
+                                    &:nth-of-type(2),
+                                    &:nth-of-type(3) {
+                                        display: none;
+                                    }
+
+                                    video {
+                                        height: 17vw;
+                                    }
+
+                                    .videoTitle {
+                                        height: 10vw;
+                                        font-size: 5vw;
+                                        margin: 3vw 0;
+                                    }
+
+                                    .text {
+                                        font-size: 4vw;
+                                        font-weight: bold;
+                                        line-height: 5.5vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

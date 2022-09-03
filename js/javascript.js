@@ -36,8 +36,6 @@ function isMobile() {
 }
 $(function(){
     if(isMobile()){
-        $('header,main,footer').addClass('rwd');
-
         $('.justified-gallery').justifiedGallery({
             rowHeight : 600,
             lastRow : 'nojustify',
