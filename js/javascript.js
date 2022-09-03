@@ -37,9 +37,9 @@ function isMobile() {
 $(function(){
     if(isMobile()){
         $('.justified-gallery').justifiedGallery({
-            rowHeight : 600,
+            rowHeight : 200,
             lastRow : 'nojustify',
-            margins : 30
+            margins : 10
         });
     }
 })
